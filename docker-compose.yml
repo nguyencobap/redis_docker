@@ -11,4 +11,4 @@ services:
             - REDIS_PORT=${REDIS_PORT}
         command: redis-server --save 20 1 --loglevel warning ${REDIS_PASSWORD:+--requirepass $REDIS_PASSWORD}
         volumes:
-            - ./redis:/data
+            - ${REDIS_DATA_PATH}:/data
